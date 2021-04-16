@@ -45,7 +45,7 @@ def reconstruct(img: np.ndarray, pca_model: PCA):
     plt.show()
 
 
-numpy_data = get_numpy_data()
-pca_model = build_pca(numpy_data[0], 0.8)
-# plot_latent_space(pca_model)
-reconstruct(numpy_data[2][0].squeeze(), pca_model)
+# numpy_data = get_numpy_data()
+# pca_model = build_pca(numpy_data[0], 0.8)
+# # plot_latent_space(pca_model)
+# reconstruct(numpy_data[2][0].squeeze(), pca_model)
