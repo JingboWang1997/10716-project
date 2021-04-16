@@ -1,14 +1,13 @@
-import torch
-import torchvision
-import torchvision.datasets as datasets
+from torchvision import datasets
 from torchvision.transforms import ToTensor
 from torch.utils.data import DataLoader
 
 
 def get_data():
-    mnist_trainset = datasets.MNIST(root='./data', train=True, download=True, transform=ToTensor())
-    mnist_testset = datasets.MNIST(root='./data', train=False, download=True, transform=ToTensor())
-    return mnist_trainset, mnist_testset
+    mnist_train = datasets.MNIST(root='./data', train=True, download=True, transform=ToTensor())
+    mnist_test = datasets.MNIST(root='./data', train=False, download=True, transform=ToTensor())
+    return mnist_train, mnist_test
+
 
 def get_numpy_data():
     trainset, testset = get_data()

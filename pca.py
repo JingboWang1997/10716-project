@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 
 from data import get_numpy_data
 
+
 def build_pca(dataset: np.ndarray, variance: float) -> PCA:
     """
     build a pca model on the dataset using the variance
@@ -15,6 +16,7 @@ def build_pca(dataset: np.ndarray, variance: float) -> PCA:
     pca_model = PCA(n_components=variance)
     pca_model.fit(flattened_dataset)
     return pca_model
+
 
 def plot_latent_space(pca_model: PCA):
     """
@@ -28,6 +30,7 @@ def plot_latent_space(pca_model: PCA):
             ax.imshow(pca_model.components_[i].reshape(28,28),cmap='gray')
     plt.show()
 
+
 def reconstruct(img: np.ndarray, pca_model: PCA):
     
     flattened = img.flatten()
@@ -40,6 +43,7 @@ def reconstruct(img: np.ndarray, pca_model: PCA):
     axes.flat[0].imshow(img, cmap='gray')
     axes.flat[1].imshow(reconstructed.reshape(28,28), cmap='gray')
     plt.show()
+
 
 numpy_data = get_numpy_data()
 pca_model = build_pca(numpy_data[0], 0.8)
